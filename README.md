@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **email_verifications** (repo: $slug).
+> Schema package for table **email_verifications** (repo: `email-verifications`).
 
 ## Files
 ```
@@ -53,15 +53,15 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ```mermaid
 erDiagram
   EMAIL_VERIFICATIONS {
-    BIGINT id PK
-    BIGINT user_id
-    CHAR(64) token_hash
-    CHAR(12) selector
-    BINARY(32) validator_hash
-    VARCHAR(64) key_version
-    DATETIME(6) expires_at
-    DATETIME(6) created_at
-    DATETIME(6) used_at
+    INT id PK
+    INT user_id
+    VARCHAR token_hash
+    VARCHAR selector
+    BLOB validator_hash
+    VARCHAR key_version
+    DATETIME expires_at
+    DATETIME created_at
+    DATETIME used_at
   }
   EMAIL_VERIFICATIONS }o--|| USERS : "user_id"
 ```
