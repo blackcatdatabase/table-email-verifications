@@ -63,7 +63,7 @@ erDiagram
     DATETIME(6) created_at
     DATETIME(6) used_at
   }
-  EMAIL_VERIFICATIONS }o--|| USERS : (user_id)
+  EMAIL_VERIFICATIONS }o--|| USERS : "user_id"
 ```
 
 ## Indexes
