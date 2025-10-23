@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\EmailVerifications\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\EmailVerifications\Dto\EmailVerificationDto;
 use BlackCat\Database\Packages\EmailVerifications\Mapper\EmailVerificationDtoMapper;
 use BlackCat\Database\Packages\EmailVerifications\Repository\EmailVerificationRepository;
