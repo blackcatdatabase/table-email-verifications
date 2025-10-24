@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\EmailVerifications;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'email_verifications'; }
-    public static function contractView(): string { return 'v_email_verifications_contract'; }
+    public static function contractView(): string { return 'vw_email_verifications'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'user_id', 'token_hash', 'selector', 'validator_hash', 'key_version', 'expires_at', 'created_at', 'used_at' ]; }
     public static function pk(): string { return 'id'; }
