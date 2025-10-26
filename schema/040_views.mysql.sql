@@ -1,9 +1,9 @@
--- Auto-generated from schema-views-mysql.psd1 (map@mtime:2025-10-24T09:19:46Z)
+-- Auto-generated from schema-views-mysql.psd1 (map@38d5403)
 -- engine: mysql
 -- table:  email_verifications
 -- Contract view for [email_verifications]
 -- Hides token_hash and validator_hash; exposes selector and timestamps.
-CREATE OR REPLACE VIEW vw_email_verifications AS
+CREATE OR REPLACE SQL SECURITY INVOKER VIEW vw_email_verifications AS
 SELECT
   id,
   user_id,
