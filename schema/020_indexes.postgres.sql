@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@38d5403)
+-- Auto-generated from schema-map-postgres.psd1 (map@c5e4097)
 -- engine: postgres
 -- table:  email_verifications
 CREATE UNIQUE INDEX IF NOT EXISTS ux_ev_selector ON email_verifications (selector);
