@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-postgres.psd1 (map@c5e4097)
+-- Auto-generated from schema-views-postgres.psd1 (map@db2f8b8)
 -- engine: postgres
 -- table:  email_verifications
 -- Contract view for [email_verifications]
@@ -12,5 +12,5 @@ SELECT
   expires_at,
   created_at,
   used_at,
-  encode(validator_hash, 'hex') AS validator_hash_hex
+  UPPER(encode(validator_hash,'hex'))::char(64) AS validator_hash_hex
 FROM email_verifications;
