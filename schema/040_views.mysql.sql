@@ -1,4 +1,4 @@
--- Auto-generated from schema-views-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-views-mysql.psd1 (map@62c9c93)
 -- engine: mysql
 -- table:  email_verifications
 -- Contract view for [email_verifications]
@@ -12,5 +12,6 @@ SELECT
   expires_at,
   created_at,
   used_at,
+  validator_hash,
   CAST(LPAD(HEX(validator_hash), 64, '0') AS CHAR(64)) AS validator_hash_hex
 FROM email_verifications;
