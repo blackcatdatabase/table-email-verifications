@@ -12,5 +12,6 @@ SELECT
   expires_at,
   created_at,
   used_at,
-  UPPER(encode(validator_hash,'hex'))::char(64) AS validator_hash_hex
+  validator_hash,
+  UPPER(encode(validator_hash,'hex')) AS validator_hash_hex
 FROM email_verifications;

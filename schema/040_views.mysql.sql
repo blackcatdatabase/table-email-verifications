@@ -12,5 +12,6 @@ SELECT
   expires_at,
   created_at,
   used_at,
+  validator_hash,
   CAST(LPAD(HEX(validator_hash), 64, '0') AS CHAR(64)) AS validator_hash_hex
 FROM email_verifications;
