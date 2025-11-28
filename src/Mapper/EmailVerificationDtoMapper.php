@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class EmailVerificationDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'user_id' => 'userId', 'token_hash' => 'tokenHash', 'validator_hash' => 'validatorHash', 'key_version' => 'keyVersion', 'expires_at' => 'expiresAt', 'created_at' => 'createdAt', 'used_at' => 'usedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'user_id' => 'userId', 'token_hash' => 'tokenHash', 'selector' => 'selector', 'validator_hash' => 'validatorHash', 'key_version' => 'keyVersion', 'expires_at' => 'expiresAt', 'created_at' => 'createdAt', 'used_at' => 'usedAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
