@@ -5,15 +5,15 @@ Email verification tokens for users.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| expires_at | TIMESTAMPTZ(6) | NO |  | Expiration timestamp (UTC). |
+| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| expires_at | DATETIME(6) | NO |  | Expiration timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | key_version | VARCHAR(64) | YES |  | Key version used for hashing/encryption. |
 | selector | CHAR(12) | NO |  | Short public selector (unique). |
 | token_hash | CHAR(64) | YES |  | Full token hash (hex/char). |
-| used_at | TIMESTAMPTZ(6) | YES |  | When token was used, if so. |
+| used_at | DATETIME(6) | YES |  | When token was used, if so. |
 | user_id | BIGINT | NO |  | Related user (FK users.id). |
-| validator_hash | BYTEA | YES |  | Hashed validator part. |
+| validator_hash | BINARY(32) | YES |  | Hashed validator part. |
 
 ## Engine Details
 
@@ -60,5 +60,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_email_verifications | mysql | algorithm=MERGE, security=INVOKER | [packages\email-verifications\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/email-verifications/schema/040_views.mysql.sql) |
-| vw_email_verifications | postgres |  | [packages\email-verifications\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/email-verifications/schema/040_views.postgres.sql) |
+| vw_email_verifications | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_email_verifications | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
