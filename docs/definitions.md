@@ -5,15 +5,15 @@ Email verification tokens for users.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
-| expires_at | DATETIME(6) | NO |  | Expiration timestamp (UTC). |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| expires_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO |  | Expiration timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
 | key_version | VARCHAR(64) | YES |  | Key version used for hashing/encryption. |
 | selector | CHAR(12) | NO |  | Short public selector (unique). |
 | token_hash | CHAR(64) | YES |  | Full token hash (hex/char). |
-| used_at | DATETIME(6) | YES |  | When token was used, if so. |
+| used_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | YES |  | When token was used, if so. |
 | user_id | BIGINT | NO |  | Related user (FK users.id). |
-| validator_hash | BINARY(32) | YES |  | Hashed validator part. |
+| validator_hash | mysql: BINARY(32) / postgres: BYTEA | YES |  | Hashed validator part. |
 
 ## Engine Details
 
