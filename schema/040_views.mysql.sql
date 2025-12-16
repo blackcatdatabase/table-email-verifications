@@ -1,14 +1,15 @@
--- Auto-generated from schema-views-mysql.yaml (map@sha1:A4E10261DACB7519F6FEA44ED77A92163429CA5E)
+-- Auto-generated from schema-views-mysql.yaml (map@sha1:FFA9A9D6FA9EE079B0DAEBB6FEE023C138E8FFA1)
 -- engine: mysql
 -- table:  email_verifications
 
 -- Contract view for [email_verifications]
--- Hides token_hash and validator_hash; exposes selector and timestamps.
+-- Exposes validator_hash for verification; token_hash remains hidden.
 CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_email_verifications AS
 SELECT
   id,
   user_id,
   selector,
+  validator_hash,
   key_version,
   expires_at,
   created_at,
