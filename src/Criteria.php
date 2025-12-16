@@ -41,11 +41,11 @@ final class Criteria extends BaseCriteria
         return [ 'token_hash', 'selector', 'key_version' ];
     }
 
-/** Columns allowed in ORDER BY (falls back to filterable() when empty). */
-protected function sortable(): array
-{
-    return [ 'id', 'user_id', 'token_hash', 'selector', 'key_version', 'expires_at', 'created_at', 'used_at' ];
-}
+    /** Columns allowed in ORDER BY (falls back to filterable() when empty). */
+    protected function sortable(): array
+    {
+        return [ 'id', 'user_id', 'token_hash', 'selector', 'key_version', 'expires_at', 'created_at', 'used_at' ];
+    }
 
     /**
      * Whitelist of joinable entities (for safe ->join() usage):
