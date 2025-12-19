@@ -1,14 +1,15 @@
--- Auto-generated from schema-views-postgres.yaml (map@sha1:EDC13878AE5F346E7EAD2CF0A484FEB7E68F6CDD)
+-- Auto-generated from schema-views-postgres.yaml (map@sha1:5C6FE96DC2067A978A357A1DCB8631B46C71D429)
 -- engine: postgres
 -- table:  email_verifications
 
 -- Contract view for [email_verifications]
--- Hides token_hash and validator_hash; exposes selector and timestamps.
+-- Exposes validator_hash for verification; token_hash remains hidden.
 CREATE OR REPLACE VIEW vw_email_verifications AS
 SELECT
   id,
   user_id,
   selector,
+  validator_hash,
   key_version,
   expires_at,
   created_at,

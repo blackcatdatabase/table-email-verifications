@@ -1,0 +1,42 @@
+{
+  "tables": {
+    "email_verifications": {
+      "columns": {
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "expires_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "key_version": {
+          "strategy": "passthrough"
+        },
+        "selector": {
+          "strategy": "passthrough"
+        },
+        "token_hash": {
+          "context": "db.hmac.email_verifications",
+          "encoding": "hex",
+          "key_version_column": "key_version",
+          "strategy": "hmac",
+          "write_key_version": true
+        },
+        "used_at": {
+          "strategy": "passthrough"
+        },
+        "user_id": {
+          "strategy": "passthrough"
+        },
+        "validator_hash": {
+          "context": "db.hmac.email_verifications",
+          "key_version_column": "key_version",
+          "strategy": "hmac",
+          "write_key_version": true
+        }
+      }
+    }
+  }
+}

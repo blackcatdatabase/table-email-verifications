@@ -39,6 +39,7 @@ SELECT
   id,
   user_id,
   selector,
+  validator_hash,
   key_version,
   expires_at,
   created_at,
@@ -53,6 +54,7 @@ SELECT
   id,
   user_id,
   selector,
+  validator_hash,
   key_version,
   expires_at,
   created_at,
@@ -95,8 +97,8 @@ SQL;
         $hasTable = SchemaIntrospector::hasTable($db, $d, $table);
         $hasView  = SchemaIntrospector::hasView($db, $d, $view);
 
-        // Quick index/FK check â€“ generator injects names (case-sensitive per DB)
-        $expectedIdx = [];
+        // Quick index/FK check - generator injects names (case-sensitive per DB)
+        $expectedIdx = [ 'idx_ev_expires', 'idx_ev_user' ];
         if ($d->isMysql()) {
             // Drop PG-only index naming patterns (e.g., GIN/GiST)
             $expectedIdx = array_values(array_filter(
@@ -129,7 +131,7 @@ SQL;
             'columns'     => Definitions::columns(),
             'version'     => $this->version(),
             'dialects'    => [ 'mysql', 'postgres' ],
-            'indexes'     => [],
+            'indexes'     => [ 'idx_ev_expires', 'idx_ev_user' ],
             'foreignKeys' => [ 'fk_ev_user' ],
         ];
     }
